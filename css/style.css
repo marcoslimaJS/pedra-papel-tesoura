@@ -1,0 +1,143 @@
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+  display: block;
+}
+
+body {
+  line-height: 1;
+}
+
+ol, ul {
+  list-style: none;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  height: 100vh;
+  background: radial-gradient(hsl(214deg, 47%, 23%), hsl(237deg, 49%, 15%));
+  color: #FFF;
+  font-family: "Barlow Semi Condensed", sans-serif;
+  padding: 20px;
+}
+
+.container {
+  max-width: 700px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.head {
+  border: 2px solid hsl(217deg, 16%, 45%);
+  padding: 20px;
+  border-radius: 10px;
+  margin-bottom: 40px;
+}
+.head .home {
+  width: 40px;
+}
+.head .choose-mode-text {
+  display: none;
+  text-align: center;
+  font-weight: 600;
+  font-size: 2.5rem;
+}
+.head .choose-mode-text.active {
+  display: block;
+}
+
+.head-game {
+  display: none;
+  justify-content: space-between;
+  align-items: center;
+}
+.head-game .logo-main {
+  display: none;
+}
+.head-game .logo-main.active {
+  display: block;
+}
+.head-game .logo-bonus {
+  display: none;
+}
+.head-game .logo-bonus.active {
+  display: block;
+}
+.head-game .score-container {
+  background: #FFF;
+  color: hsl(229deg, 25%, 31%);
+  padding: 15px 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  border-radius: 10px;
+}
+.head-game .score-container p {
+  color: hsl(229deg, 64%, 46%);
+  text-transform: uppercase;
+  font-size: 1rem;
+  font-weight: 600;
+  letter-spacing: 2px;
+}
+.head-game .score-container .score-number {
+  font-size: 3.5rem;
+  font-weight: 700;
+}
+
+.head-game.active {
+  display: flex;
+}
+
+.choose-game-mode {
+  display: flex;
+  gap: 30px;
+  margin-bottom: 60px;
+}
+.choose-game-mode div {
+  overflow: hidden;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: 0.3s;
+  box-shadow: rgba(0, 0, 0, 0.15) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+}
+.choose-game-mode div:hover {
+  opacity: 0.6;
+}
+.choose-game-mode p {
+  padding: 10px;
+  text-align: center;
+  font-size: 1.5rem;
+  font-weight: 600;
+}
+
+/*# sourceMappingURL=style.css.map */
