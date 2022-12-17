@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+  
+  <title>Pedra, Papel, Tesoura</title>
+  <link rel="stylesheet" href="./css/style.css">
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Barlow+Semi+Condensed:wght@400;600;700&display=swap" rel="stylesheet">
+
+</head>
+<body class="normal-1">
+  <header class="head container">
+    <div class="head-game">
+      <div>
+        <img class="logo-main" src="./images/logo.svg" alt="Pedra, Papel, Tesoura">
+        <img class="logo-bonus" src="./images/logo-bonus.svg" alt="Pedra, Papel, Tesoura, Lagarto, Spock">
+      </div>
+      <a class="home" href="./index.html">
+        <img src="./images/house-solid.svg" alt="Home">
+      </a>
+      <div class="score-container">
+        <p>score</p>
+        <span class="score-number"></span>
+      </div>
+    </div>
+  </header>
+
+  <main class="container">
+    <section class="choose-move active">
+      <div class="triangle-bg">
+        <img src="./images/bg-triangle.svg" alt="">
+      </div>
+      <div class="game-option" data-game="paper">
+        <div>
+          <img src="./images/icon-paper.svg" alt="">
+        </div>
+      </div>
+
+      <div class="game-option" data-game="scissors">
+        <div>
+          <img src="./images/icon-scissors.svg" alt="">
+        </div>
+      </div>
+
+      <div class="game-option" data-game="rock">
+        <div>
+          <img src="./images/icon-rock.svg" alt="">
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <section class="option-picked">
+    
+  </section>
+  
+  <script src="./src/onePlayer.js"></script>
+</body>
+</html>

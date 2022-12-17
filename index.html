@@ -16,50 +16,39 @@
 
   <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
   <style>
-    .attribution { font-size: 11px; text-align: center; }
-    .attribution a { color: hsl(228, 45%, 44%); }
+    .attribution { font-size: 11px; text-align: center;}
+    .attribution a { color: hsl(228, 92%, 60%); }
   </style>
 </head>
 <body>
 
-  <section class="head container">
-    <div class="head-game">
-      <div>
-        <img class="logo-main" src="./images/logo.svg" alt="Pedra, Papel, Tesoura">
-        <img class="logo-bonus" src="./images/logo-bonus.svg" alt="Pedra, Papel, Tesoura, Lagarto, Spock">
-      </div>
-      <div class="home">
-        <img src="./images/house-solid.svg" alt="Home">
-      </div>
-      <div class="score-container">
-        <p>score</p>
-        <span class="score-number">12</span>
-      </div>
-    </div>
-    <div class="choose-mode-text active">
+  <header class="head container">
+    <div class="choose-mode-text">
       <p>Escolha o modo de jogo</p>
     </div>
-  </section>
+  </header>
 
   <main class="main container">
     <section class="choose-game-mode">
-      <div class="normal-game">
+      <div class="normal-game" data-game="normal">
         <img src="./images/modo-normal.png" alt="">
         <p>Modo normal</p>
       </div>
-      <div class="bonus-game">
+      <div class="bonus-game" data-game="bonus">
         <img src="./images/modo-bonus.png" alt="">
         <p>Modo bônus</p>
       </div>
+      <div class="choose-players">
+        <a class="one-player" href="/onePlayer-normal.html" >1 Player</a>
+        <a class="two-players" href="./twoPlayers.html">2 Players</a>
+      </div>
     </section>
-
-
   </main>
   
   <div class="attribution">
     Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
     Coded by <a href="#">Marcos Lima</a>.
   </div>
-  <script src="./src/index.js"></script>
+  <script type="module" src="./src/index.js"></script>
 </body>
 </html>

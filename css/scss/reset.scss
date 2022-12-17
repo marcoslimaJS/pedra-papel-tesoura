@@ -33,6 +33,14 @@ img {
   display: block;
   max-width: 100%;
 }
+button {
+    background: none;
+    border: none;
+    color: inherit;
+}
+a {
+    text-decoration: none;
+}
 * {
     box-sizing: border-box;
 }

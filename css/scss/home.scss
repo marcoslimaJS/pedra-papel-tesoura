@@ -1,0 +1,85 @@
+.choose-mode-text {
+  display: block;
+  @include font-center(g);
+}
+.choose-game-mode {
+  display: flex;
+  gap: 30px;
+  margin-bottom: 60px;
+  .normal-game, .bonus-game {
+    display: block;
+    overflow: hidden;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: 0.3s;
+    
+    img {
+      max-height: 257px;
+    }
+    img, p {
+      transition: 0.3s ease-in-out;
+    }
+    &:hover img {
+      opacity: 0.6;   
+    }
+    &:hover p {
+      background: $bg-light;
+      color: $dark-text;
+    }
+    @include shadow-primary;
+  }
+  p {
+    padding: 10px;
+    @include font-center(m);
+  }
+  .choose-players {
+    margin: 20px auto;
+    display: none;
+    flex-direction: column;
+    gap: 20px;
+    max-width: 300px;
+    .one-player, .two-players {
+      background: $bg-light;
+      color: $dark-text;
+      text-transform: uppercase;
+      border-radius: 10px;
+      transition: 0.3s ease-in-out;
+      padding: 20px 30px;
+      @include font-center(m);
+      font-weight: 700;
+      &:hover {
+        background: rgb(29, 28, 28);
+        color: $bg-light;
+      }
+      @include shadow-primary;
+    }
+  }
+  &[data-game-selected] {
+    max-width: 300px;
+    margin: 20px auto;
+    display: block;
+    .normal-game, .bonus-game {
+      cursor: initial;
+      &:hover img{
+        opacity: 1;
+      }
+      &:hover p{
+        background: initial;
+        color: $bg-light;
+      }
+    }
+    .choose-players {
+      display: flex;
+    }
+  }
+  &[data-game-selected="normal"] {
+    [data-game="bonus"] {
+      display: none;
+    }
+  }
+  &[data-game-selected="bonus"] {
+    [data-game="normal"] {
+      display: none;
+    }
+  }
+}
