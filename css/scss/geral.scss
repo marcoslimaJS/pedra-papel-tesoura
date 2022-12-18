@@ -14,7 +14,7 @@ body {
 
 .head {
   border: 2px solid $header-outline;
-  padding: 20px;
+  padding: 10px 15px;
   border-radius: 10px;
   margin-bottom: 40px;
   .home {
@@ -26,18 +26,6 @@ body {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  .logo-main {
-    display: block;
-  }
-  .logo-main.active {
-    display: block;
-  }
-  .logo-bonus {
-    display: none;
-  }
-  .logo-bonus.active {
-    display: block;
-  }
   .score-container {
     background: $bg-light;
     color: $dark-text;
@@ -57,6 +45,42 @@ body {
     .score-number {
       font-size: 3.5rem;
       font-weight: 700;
+    }
+  }
+  @include device(p) {
+    .logo {
+      max-width: 110px;
+    }
+    .home {
+      max-width: 35px;
+    }
+    .score-container {
+      padding: 10px 30px;
+      p {
+        font-size: 0.875rem;
+        letter-spacing: 1px;
+      }
+      .score-number {
+        font-size: 3rem;
+      }
+    }
+  }
+  @include device(pp) {
+    .logo {
+      max-width: 90px;
+    }
+    .home {
+      max-width: 30px;
+    }
+    .score-container {
+      padding: 15px 25px;
+      p {
+        font-size: 0.750rem;
+        letter-spacing: 1px;
+      }
+      .score-number {
+        font-size: 2rem;
+      }
     }
   }
 }

@@ -1,4 +1,4 @@
-.choose-move {
+.normal-1 .choose-move {
   display: none;
   max-width: 320px;
   margin: 100px auto 10px auto;
@@ -7,15 +7,16 @@
     padding: 20px;
     position: absolute;
     cursor: pointer;
-    transition: 0.3s ease-in-out;
     div {
       padding: 30px;
     }
     img {
       width: 60px;
       height: 60px;
-    } &:hover {
+    }
+    &:hover {
       border: 5px solid $bg-light;
+      transition: 0.3s ease-in-out;
     }
   }
   [data-game="paper"] {
@@ -33,42 +34,159 @@
   &.active {
     display: block;
   }
+  @include device(pp) {
+    .form-bg {
+      display: flex;
+      margin: 0 auto;
+      max-width: 250px;
+    }
+    .game-option {
+      padding: 15px;
+      div {
+        padding: 20px;
+      }
+    }
+    [data-game="paper"] {
+      top: -40px;
+      left: 0px;
+    }
+    [data-game="scissors"] {
+      top: -40px;
+      right: 0px;
+    }
+    [data-game="rock"] {
+      top: 100px;
+      left: 95px;
+    }
+  }
 }
+
+.bonus-1 .choose-move {
+  display: none;
+  max-width: 320px;
+  margin: 70px auto 10px auto;
+  position: relative;
+  .game-option {
+    padding: 15px;
+    position: absolute;
+    cursor: pointer;
+    div {
+      padding: 20px;
+    }
+    img {
+      width: 50px;
+      height: 50px;
+    }
+    &:hover {
+      border: 3px solid $bg-light;
+      transition: 0.3s ease-in-out;
+    }
+  }
+  [data-game="paper"] {
+    top: 60px;
+    right: -30px;
+  }
+  [data-game="scissors"] {
+    top: -40px;
+    left: 100px;
+  }
+  [data-game="rock"] {
+    top: 220px;
+    left: 180px;
+  }
+  [data-game="lizard"] {
+    top: 220px;
+    left: 0px;
+  }
+  [data-game="spock"] {
+    top: 60px;
+    left: -30px;
+  }
+  &.active {
+    display: block;
+  }
+  @include device(pp) {
+    .form-bg {
+      display: flex;
+      margin: 0 auto;
+      max-width: 230px;
+    }
+    .game-option {
+      padding: 12px;
+      div {
+        padding: 15px;
+      }
+      img {
+        width: 40px;
+        height: 40px;
+      }
+    }
+    [data-game="paper"] {
+      top: 40px;
+      right: 10px;
+    }
+    [data-game="scissors"] {
+      top: -40px;
+      left: 120px;
+    }
+    [data-game="rock"] {
+      top: 160px;
+      left: 180px;
+    }
+    [data-game="lizard"] {
+      top: 160px;
+      left: 50px;
+    }
+    [data-game="spock"] {
+      top: 40px;
+      left: 10px;
+    }
+  }
+}
+
 .game-option {
   border-radius: 50%;
   display: inline-block;
   div {
     background: $bg-light;
     border-radius: 50%;
-    box-shadow: inset  0 20px 0px -10px hsl(220, 5%, 87%);
+    box-shadow: inset 0 20px 0px -10px hsl(220, 5%, 87%);
   }
 }
 // Cores
 
 [data-game="paper"] {
   background: radial-gradient($paper);
-  box-shadow: inset  0 -20px 0px -10px hsl(229, 69%, 46%);
+  box-shadow: inset 0 -17px 0px -10px hsl(229, 69%, 46%);
 }
 
 [data-game="scissors"] {
   background: radial-gradient($scissors);
-  box-shadow: inset  0 -20px 0px -10px hsl(40, 75%, 39%);
+  box-shadow: inset 0 -17px 0px -10px hsl(40, 75%, 39%);
 }
 
 [data-game="rock"] {
   background: radial-gradient($rock);
-  box-shadow: inset  0 -20px 0px -10px hsl(0, 54%, 30%);
+  box-shadow: inset 0 -17px 0px -10px hsl(0, 54%, 30%);
 }
 
+[data-game="lizard"] {
+  background: radial-gradient($lizard);
+  box-shadow: inset 0 -17px 0px -10px hsl(261, 79%, 54%);
+}
+
+[data-game="spock"] {
+  background: radial-gradient($spock);
+  box-shadow: inset 0 -17px 0px -10px hsl(189, 67%, 37%);
+}
 
 // Picked
 
-
 .option-picked {
   display: flex;
-  align-items: center;
   justify-content: center;
   gap: 80px;
+  position: relative;
   .game-option {
     padding: 30px;
     div {
@@ -79,11 +197,12 @@
       height: 120px;
     }
   }
-  .you-picked p, .house-picked p {
+  .you-picked p,
+  .house-picked p {
     text-transform: uppercase;
     margin-bottom: 40px;
     letter-spacing: 3px;
-    @include font-center(m)
+    @include font-center(m);
   }
   .house-picked {
     [data-result] {
@@ -94,9 +213,8 @@
       height: 220px;
       background: hsla(238, 48%, 15%, 0.425);
       border-radius: 50%;
-      margin-top: 100px;
       position: relative;
-      top: -30px;
+      top: 30px;
     }
   }
   .house-picked.active {
@@ -108,6 +226,7 @@
     }
   }
   .game-result {
+    align-self: center;
     display: none;
     text-transform: uppercase;
     text-align: center;
@@ -138,8 +257,110 @@
       display: block;
     }
   }
+  @include device(m) {
+    gap: 40px;
+    .game-option {
+      padding: 22px;
+      div {
+        padding: 32px;
+      }
+      img {
+        width: 80px;
+        height: 80px;
+      }
+    }
+    .you-picked p,
+    .house-picked p {
+      letter-spacing: 2px;
+      @include font-center(p);
+    }
+    .house-picked {
+      .before-pick {
+        width: 160px;
+        height: 160px;
+        top: 10px;
+        left: 20px;
+      }
+    }
+  }
+  @include device(p) {
+    gap: 60px;
+    .game-option {
+      padding: 22px;
+      div {
+        padding: 32px;
+      }
+      img {
+        width: 80px;
+        height: 80px;
+      }
+    }
+    .you-picked,
+    .house-picked {
+      display: grid;
+      gap: 20px;
+    }
+    .you-picked p,
+    .house-picked p {
+      grid-row: 2;
+      @include font-center(p);
+    }
+    .house-picked {
+      .before-pick {
+        width: 120px;
+        height: 120px;
+        top: 40px;
+        left: 40px;
+        margin-bottom: 67px;
+      }
+    }
+    .game-result {
+      position: absolute;
+      bottom: -120px;
+    }
+  }
+  @include device(pp) {
+    gap: 40px;
+    .game-option {
+      padding: 15px;
+      div {
+        padding: 20px;
+      }
+      img {
+        width: 60px;
+        height: 60px;
+      }
+    }
+    .you-picked p,
+    .house-picked p {
+      letter-spacing: 1px;
+      font-size: 0.875rem;
+    }
+    .house-picked {
+      .before-pick {
+        width: 100px;
+        height: 100px;
+        top: 10px;
+        left: 20px;
+        margin-bottom: 31px;
+      }
+    }
+  }
 }
 .winner {
-  box-shadow: rgba(219, 214, 214, 0.027) 0px 0px 0px 60px, rgba(255, 255, 255, 0.027) 0px 0px 0px 120px, rgba(250, 250, 250, 0.034) 0px 0px 0px 180px;
+  box-shadow: rgba(219, 214, 214, 0.027) 0px 0px 0px 60px,
+    rgba(255, 255, 255, 0.027) 0px 0px 0px 120px,
+    rgba(250, 250, 250, 0.034) 0px 0px 0px 180px;
   border-radius: 50%;
+  display: inline-block !important;
+  @include device(m) {
+    box-shadow: rgba(219, 214, 214, 0.027) 0px 0px 0px 40px,
+      rgba(255, 255, 255, 0.027) 0px 0px 0px 80px,
+      rgba(250, 250, 250, 0.034) 0px 0px 0px 120px;
+  }
+  @include device(pp) {
+    box-shadow: rgba(219, 214, 214, 0.027) 0px 0px 0px 20px,
+      rgba(255, 255, 255, 0.027) 0px 0px 0px 40px,
+      rgba(250, 250, 250, 0.034) 0px 0px 0px 80px;
+  }
 }
